@@ -1,0 +1,120 @@
+[
+  {
+    "process": "1.打印/设置/开始",
+    "number": "1",
+    "risk_level": "中等",
+    "inspection_items": "-核对工单与图稿，确认物料， 出卷方向， 选择正确的文件进行生产",
+    "inspection_frequency": "每份工单开始时",
+    "method": "根据稿图/布局目测",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "2",
+    "risk_level": "严重",
+    "inspection_items": "根据图稿与资料检查印刷首检样品，检查印刷产品的布局与可变信息（size、价格等） ",
+    "inspection_frequency": "每份工单开始时",
+    "method": "根据稿图/布局目测",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "3",
+    "risk_level": "严重",
+    "inspection_items": "条形码扫描等级\n- 与打印方向平行的条形码，等级为A/B则通过\n- 与打印方向垂直的条形码，等级为A/B/C则通过\n- 二维码根据客人要求进行检查",
+    "inspection_frequency": "每张工单第一片",
+    "method": "扫描枪或等效设备",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "4",
+    "risk_level": "严重",
+    "inspection_items": "首检验证EPC后4位与流水号匹配",
+    "inspection_frequency": "每张工单第一片",
+    "method": "Inline",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "5",
+    "risk_level": "中等",
+    "inspection_items": "检查印刷质量和整体外观",
+    "inspection_frequency": "至少每单前5片\n更换物料/色带后5片",
+    "method": "对照样品或者图稿",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "6",
+    "risk_level": "中等",
+    "inspection_items": "-印刷质量符合目视化指引/样品卡\n-确保每个SKU生产足够的数量",
+    "inspection_frequency": "每SKU的第一片及最后一片\n每个SKU",
+    "method": "目视-样品卡",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "7",
+    "risk_level": "严重",
+    "inspection_items": "参照图稿检查可变信息（尺码，UPC款式等） ",
+    "inspection_frequency": "每个PO/TE连续5片",
+    "method": "对照工单目测",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "8",
+    "risk_level": "中等",
+    "inspection_items": "检查打印质量和整体外观",
+    "inspection_frequency": "每半小时检查连续5片",
+    "method": "对照样品或者样品卡",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "9",
+    "risk_level": "严重",
+    "inspection_items": "检查条形码/二维码/EAS可读性，当发现问题时需停机并用手持设备检查条形码等级/二维码，A/B则可接受；EPC与流水号匹配；",
+    "inspection_frequency": "每次停机后5pcs",
+    "method": "扫描枪或其他等效设备",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "10",
+    "risk_level": "严重",
+    "inspection_items": "-Inline QC 验证产品可读且编码正确，EPC 与datamatrics/UPC匹配",
+    "inspection_frequency": "按照标准抽检计划或客人的特殊要求",
+    "method": "目测",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "11",
+    "risk_level": "中等",
+    "inspection_items": "完成生产后需要上传相应的编码文件",
+    "inspection_frequency": "每单",
+    "method": "目测",
+    "results": ""
+  },
+  {
+    "process": "3.包装 ",
+    "number": "12",
+    "risk_level": "轻微",
+    "inspection_items": "按照公司标准和客户要求进行包装\n- 核对牌头与工单一致，SKU个数与工单一致\n- 确认工单是否有抽样及特殊包装要求\n-核对国家区分包装",
+    "inspection_frequency": "每单",
+    "method": "目测",
+    "results": ""
+  },
+  {
+    "process": "4.出货",
+    "number": "13",
+    "risk_level": "轻微",
+    "inspection_items": "-确认单货一致，无混装，漏装问题\n-确认出货地址信息正确，称重并打印外箱贴",
+    "inspection_frequency": "每单",
+    "method": "目测",
+    "results": ""
+  }
+
+]

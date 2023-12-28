@@ -1,0 +1,245 @@
+[
+  {
+    "process": "1.打印/设置/开始",
+    "number": "1",
+    "risk_level": "严重",
+    "inspection_items": "在D2comm上进行数据更新'Retrieve Update'",
+    "inspection_frequency": "每班次最少两次",
+    "method": "D2Comm",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "2",
+    "risk_level": "中等",
+    "inspection_items": "物料，碳带、产品出卷方向与DIT和工单一致",
+    "inspection_frequency": "每Batch的第一片",
+    "method": "对照DIT目测",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "3",
+    "risk_level": "严重",
+    "inspection_items": "Format版本与DIT一致",
+    "inspection_frequency": "每单的第一片",
+    "method": "对照DIT目测",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "4",
+    "risk_level": "严重",
+    "inspection_items": "-检查Printer Firmware（打印机固件），PCmate版本与DIT上的版本一致，或具有比DIT更高的版本 ",
+    "inspection_frequency": "每单的第一片",
+    "method": "对照DIT目测",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "5",
+    "risk_level": "严重",
+    "inspection_items": "根据DIT检查产品，对照稿图和工单检查印刷产品的布局与可变信息（size、价格等） ",
+    "inspection_frequency": "每单的第一片",
+    "method": "对照DIT/稿图/布局目测",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "6",
+    "risk_level": "严重",
+    "inspection_items": "条形码/二维码扫描内容与打印可读内容一致",
+    "inspection_frequency": "每Batch的第一片",
+    "method": "M9090，M9020 系列TruCheck，Webscan\n（或等效设备）",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "7",
+    "risk_level": "中等",
+    "inspection_items": "条形码/二维码扫描等级\n- 与打印方向平行的条形码，等级为A/B则通过\n- 与打印方向垂直的条形码，等级为A/B/C则通过\n- Polo条形码扫读等级需A/B则通过\n- 二维码扫读根据客户要求进行扫读",
+    "inspection_frequency": "每Batch的第一片",
+    "method": "M9090，M9020 系列TruCheck，Webscan\n（或等效设备）",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "8",
+    "risk_level": "严重",
+    "inspection_items": "检查印刷产品EPC前15位与PCMate一致；如PCMate上没有EPC，与样品卡上核对EPC前三位。 ",
+    "inspection_frequency": "每单的第一片",
+    "method": "在线QC，DOTA900，M9090 系列(或EPC阅读器设备)",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "9",
+    "risk_level": "中等",
+    "inspection_items": "检查印刷质量和外观\n-Carter's 不接受任何字体缺失的产品",
+    "inspection_frequency": "至少每单前5片\n更换物料/色带后5片",
+    "method": "对照样品或者样品卡",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "10",
+    "risk_level": "严重",
+    "inspection_items": "Target by SKU进行首检、印刷质量及外观",
+    "inspection_frequency": "每个SKU第一片",
+    "method": "对照样品或者样品卡",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "11",
+    "risk_level": "中等",
+    "inspection_items": "检查可变信息(尺寸、UPC、款式等)正确",
+    "inspection_frequency": "每个PO/TE第一片",
+    "method": "对照工单目测",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "12",
+    "risk_level": "中等",
+    "inspection_items": "检查印刷质量和外观",
+    "inspection_frequency": "每半小时检查连续5片",
+    "method": "对照样品或者样品卡",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "13",
+    "risk_level": "严重",
+    "inspection_items": "-Inline QC 验证产品可读且编码正确\n-根据客户要求，需验证条码/二维码与EPC是否匹配",
+    "inspection_frequency": "每单",
+    "method": "目测 / Inline QC 软件",
+    "results": ""
+  },
+  {
+    "process": "1.上机检查",
+    "number": "14",
+    "risk_level": "严重",
+    "inspection_items": "-产品与订单是否匹配\n-产品是否够数\n-剪折要求,订单生产要求",
+    "inspection_frequency": "每单",
+    "method": "对照工单&DIT目测和尺子",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "15",
+    "risk_level": "中等",
+    "inspection_items": "检查印刷质量和外观",
+    "inspection_frequency": "每半小时检查连续5片",
+    "method": "目测&尺子",
+    "results": ""
+  },
+  {
+    "process": "1.上料检查",
+    "number": "16",
+    "risk_level": "中等",
+    "inspection_items": "核对卡牌工单与标签工单的信息一致",
+    "inspection_frequency": "每单的第一片",
+    "method": "目测",
+    "results": ""
+  },
+  {
+    "process": "1.上料检查",
+    "number": "17",
+    "risk_level": "中等",
+    "inspection_items": "核对卡牌内容、标签内容、工单资料三者信息一致",
+    "inspection_frequency": "每单的第一片",
+    "method": "目测",
+    "results": ""
+  },
+  {
+    "process": "1.上料检查",
+    "number": "18",
+    "risk_level": "严重",
+    "inspection_items": "检查卡牌无混码",
+    "inspection_frequency": "每单的第一片",
+    "method": "目测",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "19",
+    "risk_level": "严重",
+    "inspection_items": "码产品：根据图纸核对芯片方向，每份单做完必须上传数据",
+    "inspection_frequency": "每单",
+    "method": "目测",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "20",
+    "risk_level": "严重",
+    "inspection_items": "更换下个SKU卡牌时，检查相邻两个SKU Label信息",
+    "inspection_frequency": "每个SKU前后各10片",
+    "method": "目测",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "21",
+    "risk_level": "中等",
+    "inspection_items": "检查卡牌与标签上的UPC一致",
+    "inspection_frequency": "每半小时2片",
+    "method": "目测",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "22",
+    "risk_level": "中等",
+    "inspection_items": "检查贴标位置在虚线框内或无偏位，方向正确",
+    "inspection_frequency": "每半小时1片",
+    "method": "目测",
+    "results": ""
+  },
+  {
+    "process": "3.收料检查",
+    "number": "23",
+    "risk_level": "中等",
+    "inspection_items": " 检查是否有混码、漏贴、贴错标签并且数量与客户需求一致",
+    "inspection_frequency": "每单",
+    "method": "目测/称重",
+    "results": ""
+  },
+  {
+    "process": "3.收料检查",
+    "number": "24",
+    "risk_level": "轻微",
+    "inspection_items": "编码产品：核对编码数量与收料数量一致",
+    "inspection_frequency": "每单",
+    "method": "称重",
+    "results": ""
+  },
+  {
+    "process": "离线检查",
+    "number": "25",
+    "risk_level": "严重",
+    "inspection_items": "- 检查EPC正确可读，无重复；\n- 根据客人的要求检查条形码/二维码和EPC匹配\n- 每个SKU均满足客户要求数量",
+    "inspection_frequency": "按照标准抽检计划或客人的特殊要求",
+    "method": "FX9500、Roll to Roll、XR450、广工平台（或同等效设备）",
+    "results": ""
+  },
+  {
+    "process": "包装",
+    "number": "26",
+    "risk_level": "轻微",
+    "inspection_items": "按照公司标准和客户要求进行包装\n- 核对牌头与工单一致，SKU个数与工单一致\b- 确认工单是否有抽样及特殊包装要求",
+    "inspection_frequency": "每单",
+    "method": "目视",
+    "results": ""
+  },
+  {
+    "process": "出货",
+    "number": "27",
+    "risk_level": "轻微",
+    "inspection_items": "-确认单货一致，无混装，漏装问题\n-确认出货地址信息正确，称重并打印外箱贴\n-M&S 订单需确认D2Comm报告",
+    "inspection_frequency": "每单",
+    "method": "目测",
+    "results": ""
+  }
+]
