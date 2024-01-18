@@ -1,0 +1,93 @@
+[
+  {
+    "process": "1.打印/设置/开始\nPrinting /Setup/Startup",
+    "number": "1",
+    "risk_level": "中等",
+    "inspection_items": "物料，出卷方向与DIT和工单信息一致\nBase roll, wind direction match with DIT and Job sheet",
+    "inspection_frequency": "每份工单开始时\nBeginning of each order",
+    "method": "对照DIT目测\nDIT",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始\nPrinting /Setup/Startup",
+    "number": "2",
+    "risk_level": "严重",
+    "inspection_items": "根据DIT检查产品，对照稿图和工单检查打印出来的产品布局与可变信息一致\nCheck printed products against DIT, Artwork and Job sheet for layout and variable information verification",
+    "inspection_frequency": "每份工单开始时\nBeginning of each order",
+    "method": "对照DIT/稿图/布局目测\nDIT / Artwork / Layout",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始\nPrinting /Setup/Startup",
+    "number": "3",
+    "risk_level": "严重",
+    "inspection_items": "条形码扫描内容与打印可读内容一致\nBarcode scan information match with printed human readable information",
+    "inspection_frequency": "每单的第一片和最后一片\nFirst and last piece of each order",
+    "method": "M9090，M9020系列（或等效设备）\nM9090, M9020 series(or equivalent equipment)",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始\nPrinting /Setup/Startup",
+    "number": "4",
+    "risk_level": "中等",
+    "inspection_items": "条形码扫描等级\n- 与打印方向平行的条形码，等级为A/B则通过\n- 与打印方向垂直的条形码，等级为A/B/C则通过\n- UQ俄罗斯客户二维码类型为GS1（根据客人要求进行检查）\nBarcode scan grading\n- For 1D 'Fence' barcode grading pass if A/B\n- For 1D 'Ladder' barcode grading pass if A/B/C\n- UQ-RU datamatrix has to be GS1 type (For 2D barcode check \nbased on customer requirement)",
+    "inspection_frequency": "每张工单第一片与最后一片\nFirst and last piece of each order",
+    "method": "M9090，M9020系列TruCheck，Webscan（或等效设备）智能手机&Cognex App（适用于二维码）\nM9090, M9020 seriesTruCheck, Webscan(or equivalent equipment)",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始\nPrinting /Setup/Startup",
+    "number": "5",
+    "risk_level": "中等",
+    "inspection_items": "检查打印质量和整体外观\nCheck for print quality and general appearance",
+    "inspection_frequency": "1）至少每单前5片\n2）更换物料/墨水后5片1)\nMinimum first 5 pcs of each order\n2) 5 pcs after changing baseroll/ribbon",
+    "method": "对照样品或者样品卡\nVisual against samples / tolerance",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查\nIn Process Checking",
+    "number": "6",
+    "risk_level": "严重",
+    "inspection_items": "检查可变信息（尺码，UPC，款式，等等）\nCheck variable information (size, UPC, Style, etc)",
+    "inspection_frequency": "每个SKU第一片\nFirst piece of each SKU",
+    "method": "对照工单目测\nVisual against Job sheet",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查\nIn Process Checking",
+    "number": "7",
+    "risk_level": "中等",
+    "inspection_items": "检查印刷质量和外观\nCheck for print quality and general appearance",
+    "inspection_frequency": "至少每个SKU的前中后各5片\nMinumum 5 pcs at the beginning, middle and end of each SKU",
+    "method": "对照样品或者样品卡\nVisual against samples / tolerance",
+    "results": ""
+  },
+  {
+    "process": "3.离线检查\nOffline QC",
+    "number": "8",
+    "risk_level": "严重",
+    "inspection_items": "- 检查EPC可读性，是否有重复，Schema和数量\n- 根据客人的要求检查条形码和EPC匹配\n- 根据客人的要求检查产品外观质量\n- 每个SKU均满足客户要求数量\n- Check EPC readability, duplication, schema and quantity\n- Check Barcode & EPC matching if required\n- Check for print quality and general appearance\n- Correct Qty for each SKU",
+    "inspection_frequency": "按照标准抽检计划或客人的特殊要求（UQ 100%全检）\nFollow standard sampling chart or Customer specific standards (UQ 100% inspection)",
+    "method": "FX9500（或同等效设备）\n(or equivalent equipment)",
+    "results": ""
+  },
+  {
+    "process": "4.包装Packing",
+    "number": "9",
+    "risk_level": "中等",
+    "inspection_items": "按照公司标准和客户要求进行包装\nPacking per AD standard packing requirement & customer requirement",
+    "inspection_frequency": "每单\nEach job",
+    "method": "目测\nVisual",
+    "results": ""
+  },
+  {
+    "process": "5.出货\nShipping",
+    "number": "10",
+    "risk_level": "轻微",
+    "inspection_items": "-确认单货一致，无混装，漏装问题\n-Check the job jacket and goods are the same, no mixed or missing\n-确认出货地址信息正确，称重并打印外箱贴\n--Confirm that the shipping address information is correct, weigh and print the outer box sticker",
+    "inspection_frequency": "每单",
+    "method": "目测",
+    "results": ""
+  }
+  
+]

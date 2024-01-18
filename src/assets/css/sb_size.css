@@ -1,0 +1,66 @@
+.sb_w_40 {
+  width: 40px !important;
+}
+.sb_w_60 {
+  width: 60px !important;
+}
+.sb_w_100 {
+  width: 100px !important;
+}
+.sb_w_150 {
+  width: 150px !important;
+}
+.sb_w_200 {
+  width: 200px !important;
+}
+.sb_w_250 {
+  width: 250px;
+}
+.sb_w_300 {
+  width: 300px;
+}
+
+
+.sb_h_20 {
+  height: 20px;
+}
+
+.sb-h-80 {
+  height: 80px;
+}
+
+.sb-h-85 {
+  height: 85px;
+}
+
+.sb-h-90 {
+  height: 90px;
+}
+
+.sb-h-100 {
+  height: 100px;
+}
+
+.sb-h-105 {
+  height: 105px;
+}
+
+.sb-h-108 {
+  height: 108px;
+}
+
+.sb-h-110 {
+  height: 110px;
+}
+
+.sb-h-200 {
+  height: 200px;
+}
+
+.sb-pl-5 {
+  padding-left: 5px;
+}
+
+.sb-pl-10 {
+  padding-left: 10px;
+}

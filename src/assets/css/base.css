@@ -1,0 +1,82 @@
+/* 标题颜色 */
+.qir-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  background-color: var(--el-color-primary);
+}
+
+/* 小手 */
+.sb_hand {
+  cursor: pointer;
+}
+
+/* 溢出 */
+.one-ellipsis{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap
+}
+
+/* 提升信息 */
+.hint {
+  color: #f52025;
+  font-size: 18px;
+  letter-spacing: .2em;
+}
+
+/* 布局 */
+.jh_grid_100 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+/* 禁用div */
+.not-click {
+  pointer-events: none;
+  opacity:0.5;
+}
+
+/* 禁止复制文字 */
+.xj-not-select {
+  user-select: none
+}
+
+/* 滚动 */
+.scoll {
+  overflow: auto !important;
+  /* background: transparent !important;
+  -webkit-appearance: auto !important; */
+  display: block;
+}
+
+/* 隔行显示颜色 */
+/* .qir-search-list-item:nth-child(even) {
+  background-color: rgb(232, 180, 180);
+}
+.qir-search-list-item:nth-child(odd) {
+  background-color: rgb(212, 225, 212);
+} */
+
+
+.section::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(180deg, #D0368A 0%, #708AD4 99%) !important;
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5) !important;
+  border-radius: 100px !important;
+  overflow-y: auto !important;
+}
+
+/* 旧语法 */
+.section::-webkit-scrollbar-thumb:hover {
+  background-color: #5749d2;
+}
+
+/* 新语法 */
+.section {
+  scrollbar-color: #d4aa70 #e4e4e4;
+  transition: scrollbar-color 0.3s ease-out;
+}
+
+.section:hover {
+  scrollbar-color: #5749d2;
+}

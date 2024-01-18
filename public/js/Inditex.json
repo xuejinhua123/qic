@@ -1,0 +1,252 @@
+[
+  {
+    "step": "印刷",
+    "process": "1.打印/设置/开始",
+    "number": "1",
+    "risk_level": "严重",
+    "inspection_items": "在D2comm上进行数据更新 “Retrieve Update”",
+    "inspection_frequency": "每班次最少两次",
+    "method": "D2Comm",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "1.打印/设置/开始",
+    "number": "2",
+    "risk_level": "中等",
+    "inspection_items": "物料，碳带、产品出卷方向与DIT和工单一致",
+    "inspection_frequency": "每单的第一片",
+    "method": "对照DIT目测",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "1.打印/设置/开始",
+    "number": "3",
+    "risk_level": "严重",
+    "inspection_items": "Format版本与DIT一致",
+    "inspection_frequency": "每单的第一片",
+    "method": "对照DIT目测",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "1.打印/设置/开始",
+    "number": "4",
+    "risk_level": "严重",
+    "inspection_items": "-检查Printer Firmware（打印机固件），PCmate版本与DIT上的版本一致，或具有比DIT更高的版本",
+    "inspection_frequency": "每单的第一片",
+    "method": "对照DIT目测",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "1.打印/设置/开始",
+    "number": "5",
+    "risk_level": "严重",
+    "inspection_items": "根据DIT检查产品，对照稿图和工单检查印刷产品的布局与可变信息（size、价格等） ",
+    "inspection_frequency": "每单的第一片",
+    "method": "对照DIT/稿图/布局目测",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "1.打印/设置/开始",
+    "number": "6.1",
+    "risk_level": "严重",
+    "inspection_items": "TexTrace:\n-密码验证： Pwd & User mem Verification\n-锁定验证：Locking Verification\n-数据验证：Data Decoding",
+    "inspection_frequency": "每单的第一片和最后一片",
+    "method": "Motorola MC3100,Zebra 9908 R手持式读卡器（按照样品卡备注检查）",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "1.打印/设置/开始",
+    "number": "6.2",
+    "risk_level": "严重",
+    "inspection_items": "PFL(Care label)密码验证/锁定验证",
+    "inspection_frequency": "每单的第一片和最后一片",
+    "method": "Zebra 9908 R手持式读卡器",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "1.打印/设置/开始",
+    "number": "6.3",
+    "risk_level": "严重",
+    "inspection_items": "Tempe密码验证/锁定验证",
+    "inspection_frequency": "每个订单的第一片、中件和最后一片",
+    "method": "Zebra 9908 R手持式读卡器",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "1.打印/设置/开始",
+    "number": "7",
+    "risk_level": "严重",
+    "inspection_items": "条形码/二维码扫描内容与打印可读内容一致",
+    "inspection_frequency": "每个订单的第一片",
+    "method": "M9090，M9020 系列TruCheck，Webscan\n（或等效设备）",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "1.打印/设置/开始",
+    "number": "8",
+    "risk_level": "中等",
+    "inspection_items": "条形码/二维码扫描等级\n- 与打印方向平行的条形码，等级为A/B则通过\n- 与打印方向垂直的条形码，等级为A/B/C则通过\n- 二维码扫读根据客户要求进行扫读",
+    "inspection_frequency": "每个订单的第一片",
+    "method": "M9090，M9020 系列TruCheck，Webscan\n（或等效设备）",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "1.打印/设置/开始",
+    "number": "9",
+    "risk_level": "严重",
+    "inspection_items": "检查印刷产品EPC前15位与PCMate一致；如PCMate上没有EPC，与样品卡上核对EPC前三位",
+    "inspection_frequency": "每个订单的第一片",
+    "method": "在线QC，DOTA900，M9090 系列\n(或EPC阅读器设备)",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "1.打印/设置/开始",
+    "number": "10",
+    "risk_level": "中等",
+    "inspection_items": "检查印刷质量和外观",
+    "inspection_frequency": "每单前5片\n更换物料/色带后5片",
+    "method": "对照样品或者样品卡",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "2.过程检查",
+    "number": "11",
+    "risk_level": "中等",
+    "inspection_items": "检查可变信息(尺寸、UPC、款式等)正确",
+    "inspection_frequency": "每个订单的第一片",
+    "method": "对照工单目测",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "2.过程检查",
+    "number": "12",
+    "risk_level": "中等",
+    "inspection_items": "检查印刷质量和外观",
+    "inspection_frequency": "每个订单的第一片",
+    "method": "对照样品或者样品卡",
+    "results": ""
+  },
+  {
+    "step": "印刷",
+    "process": "2.过程检查",
+    "number": "13",
+    "risk_level": "严重",
+    "inspection_items": "-Inline QC 验证产品可读且编码正确\n-根据客户要求，需验证条码/二维码与EPC是否匹配",
+    "inspection_frequency": "每单",
+    "method": "目测 / Inline QC 软件",
+    "results": ""
+  },
+  {
+    "step": "剪折",
+    "process": "1.上机前检查",
+    "number": "14",
+    "risk_level": "严重",
+    "inspection_items": "-产品与订单是否匹配\n-产品是否够数\n-剪折要求,订单生产要求",
+    "inspection_frequency": "每单",
+    "method": "对照工单&DIT目测和尺子",
+    "results": ""
+  },
+  {
+    "step": "剪折",
+    "process": "1.上机前检查",
+    "number": "15",
+    "risk_level": "严重",
+    "inspection_items": "Overlock 尺寸检查和目视检查",
+    "inspection_frequency": "每个订单的第一片",
+    "method": "目测和尺子",
+    "results": ""
+  },
+  {
+    "step": "剪折",
+    "process": "1.上机前检查",
+    "number": "16",
+    "risk_level": "严重",
+    "inspection_items": "Overlock 尺寸检查和目视检查",
+    "inspection_frequency": "每个订单的第一片",
+    "method": "Zebra 9908 R手持式读卡器",
+    "results": ""
+  },
+  {
+    "step": "剪折",
+    "process": "2.过程检查",
+    "number": "17",
+    "risk_level": "严重",
+    "inspection_items": "-Inline QC 验证产品可读且编码正确\n-根据客户要求，需验证条码/二维码与EPC是否匹配",
+    "inspection_frequency": "每单",
+    "method": "目测 / Inline QC 软件",
+    "results": ""
+  },
+  {
+    "step": "剪折",
+    "process": "2.过程检查",
+    "number": "18",
+    "risk_level": "中等",
+    "inspection_items": "检查印刷质量和外观",
+    "inspection_frequency": "每半小时检查连续5片",
+    "method": "目测&尺子",
+    "results": ""
+  },
+  {
+    "step": "离线检查",
+    "process": "离线检查",
+    "number": "19",
+    "risk_level": "严重",
+    "inspection_items": "按照公司标准和客户要求进行外观检查",
+    "inspection_frequency": "每单",
+    "method": "",
+    "results": ""
+  },
+  {
+    "step": "离线检查",
+    "process": "离线检查",
+    "number": "20",
+    "risk_level": "严重",
+    "inspection_items": "EPC正确可读，无重复；\n- 根据客人的要求检查条形码/二维码和EPC匹配\n- 每个SKU均满足客户要求数量",
+    "inspection_frequency": "每单",
+    "method": "FX9500、Roll to Roll、XR450、广工平台\n（或同等效设备）",
+    "results": ""
+  },
+  {
+    "step": "离线检查",
+    "process": "离线检查",
+    "number": "21",
+    "risk_level": "严重",
+    "inspection_items": "AQL0.4 RFIDQC:\n-从每单数量SEQ多的产品里按AQL抽样标准额外加严抽检",
+    "inspection_frequency": "每单",
+    "method": "AQL0.4 RFIDQC",
+    "results": ""
+  },
+  {
+    "step": "包装",
+    "process": "包装",
+    "number": "22",
+    "risk_level": "轻微",
+    "inspection_items": "按照公司标准和客户要求进行包装\n- 核对牌头与工单一致，SKU个数与工单一致\n- 确认工单是否有抽样及特殊包装要求",
+    "inspection_frequency": "每单",
+    "method": "目视",
+    "results": ""
+  },
+  {
+    "step": "出货",
+    "process": "出货",
+    "number": "23",
+    "risk_level": "轻微",
+    "inspection_items": "-确认单货一致，无混装，漏装问题\n-确认出货地址信息正确，称重并打印外箱贴",
+    "inspection_frequency": "每单",
+    "method": "目视",
+    "results": ""
+  }
+]

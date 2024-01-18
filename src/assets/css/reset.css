@@ -1,0 +1,24 @@
+/* 1、清除所有标记的内外边距 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+/* 2、全局文本大小、颜色设置 */
+body { color:#111; font:12px/20px "SimSun","宋体","Arial Narrow",HELVETICA; background:#fff; }
+/* 3、清除项目符号或编号前面的各种符号 */
+ul, ol { list-style:none; }
+/* 4、全局链接效果 */
+a:link , a:visited{ color:#444; text-decoration:none; }
+a:hover{ color:#990000; text-decoration:underline; }
+/* 5、所有图片去边线 */
+img{ border:0; }
+/* 6、合并表格的边线 */
+table{ border-collapse:collapse; }
+/* 7、浮动和清除 */
+.float1{ float:left; }
+.float2{ float:right; }
+.clear{ clear:both; }
+/* 8、主题 */
+:root {
+  --el-color-primary: rgb(15, 215, 15);
+  color: #000;
+}
+
+

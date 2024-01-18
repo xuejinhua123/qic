@@ -1,0 +1,137 @@
+[
+  {
+    "process": "1.打印/设置/开始",
+    "number": "1",
+    "risk_level": "中等",
+    "inspection_items": "对应颜色测色仪测量：Epson ΔE<2，目测样卡没有明显差异",
+    "inspection_frequency": "1）参照色卡，当班次机台生产的RB所有涉及的颜色",
+    "method": "参考颜色配方X-rite Exact测色仪色卡",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "2",
+    "risk_level": "中等",
+    "inspection_items": "核对工单与DIT，确认物料\n核对稿图和DIT确认出卷方向\n-只印刷color bar产品，根据工单核对物料，选择正确打印资料生产",
+    "inspection_frequency": "每份工单开始时",
+    "method": "根据DIT/稿图/布局目测",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "3",
+    "risk_level": "严重",
+    "inspection_items": "对照稿图和工单检查打印出来的产品布局及可变信息，条码一致-color bar印刷上下偏位在1mm内",
+    "inspection_frequency": "每份工单开始时",
+    "method": "根据DIT/稿图/布局目测",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "4",
+    "risk_level": "中等",
+    "inspection_items": "条形码扫描等级\n- 与打印方向平行的条形码，等级为A/B则通过\n- 与打印方向垂直的条形码，等级为A/B/C则通过- 二维码根据客人要求进行检查",
+    "inspection_frequency": "每份工单第一片",
+    "method": "M9090，M9020系列TruCheck，Webscan\n（或等效设备）",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "5",
+    "risk_level": "严重",
+    "inspection_items": "条形码/二维码扫描内容与打印可读内容一致",
+    "inspection_frequency": "每份工单第一片",
+    "method": "M9090，M9020系列TruCheck，Webscan\n（或等效设备）",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "6",
+    "risk_level": "中等",
+    "inspection_items": "检查印刷质量和整体外观",
+    "inspection_frequency": "1）至少每单前5片2）更换物料/色带后5片",
+    "method": "对照样品或者样品卡",
+    "results": ""
+  },
+  {
+    "process": "1.打印/设置/开始",
+    "number": "7",
+    "risk_level": "严重",
+    "inspection_items": "1. 物料与工单/配方/DIT匹配\n2. 墨水在有效期内并且遵循先进先出的使用原则 ",
+    "inspection_frequency": "每单 ",
+    "method": "工单/DIT/系统\n目测",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "8",
+    "risk_level": "中等",
+    "inspection_items": "1.印刷质量符合目视化指引/样品卡\n2.确保每个SKU生产足够的数量",
+    "inspection_frequency": "1.每SKU的第一片及最后一片\n2.每个SKU",
+    "method": "目视 样品卡 系统",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "9",
+    "risk_level": "严重",
+    "inspection_items": "参照稿图检查可变信息（尺码，UPC款式，等等） ",
+    "inspection_frequency": "每个PO/TE第一片 ",
+    "method": "对照工单目测",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "10",
+    "risk_level": "中等",
+    "inspection_items": "检查打印质量和整体外观",
+    "inspection_frequency": "每半小时检查连续5片",
+    "method": "对照样品或者样品卡",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "11",
+    "risk_level": "中等",
+    "inspection_items": "1.检查条形码/二维码可读性，当发现问题时需停机并用手持设备检查条形码等级，A/B则可接受；",
+    "inspection_frequency": "每单",
+    "method": "mini 广工/广工平台/9020扫描仪或其他等效设备",
+    "results": ""
+  },
+  {
+    "process": "2.过程检查",
+    "number": "12",
+    "risk_level": "严重",
+    "inspection_items": "1. 广工QC检测二维码/条形码信息与EPC匹配； ",
+    "inspection_frequency": "按照标准抽检计划或客人的特殊要求",
+    "method": "mini 广工/广工平台/9020扫描仪或其他等效设备",
+    "results": ""
+  },
+  {
+    "process": "3.离线检查",
+    "number": "13",
+    "risk_level": "严重",
+    "inspection_items": "- 检查EPC可读性，是否有重复，Schema和数量\n- 根据客人的要求检查条形码和EPC匹配\n- 根据客人的要求检查产品外观质量\n- 每个SKU均满足客户要求数量",
+    "inspection_frequency": "按照标准抽检计划或客人的特殊要求",
+    "method": "M9090，M9020系列TruCheck，Webscan/广工\n（或等效设备）",
+    "results": ""
+  },
+  {
+    "process": "4.包装",
+    "number": "14",
+    "risk_level": "轻微",
+    "inspection_items": "按照公司标准和客户要求进行包装\n- 核对牌头与工单一致，SKU个数与工单一致\n- 确认工单是否有抽样及特殊包装要求",
+    "inspection_frequency": "每单",
+    "method": "目测",
+    "results": ""
+  },
+  {
+    "process": "5.出货",
+    "number": "15",
+    "risk_level": "轻微",
+    "inspection_items": "- 确认单货一致，无混装，漏装问题\n- 确认出货地址信息正确，称重并打印外箱贴",
+    "inspection_frequency": "每单",
+    "method": "目测",
+    "results": ""
+  }
+]
