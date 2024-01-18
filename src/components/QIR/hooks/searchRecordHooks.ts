@@ -104,8 +104,6 @@ function _useSearchRecordHooks(isShowRecordView:Ref<boolean>, batch:Ref<string>)
       }
     }
   })
-
-  /// 
   
   return {
     _clickSearchRecord,_filterSearchRecordList
