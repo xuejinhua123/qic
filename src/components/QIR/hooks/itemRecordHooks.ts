@@ -59,6 +59,7 @@ function _useItemRecordHooks(isShowQIR:Ref<boolean>, _record:Ref<IQICRecord>, tb
     qicStore.qtyMap = mangeqty(_orderInfo.value.qty)
 
     // (3) 赋值pinia
+    qicStore.queryForm.batch = batch // 2024-01-24 解决 搜索记录点击记录 修改OK 没有batch的提升信息
     qicStore.queryForm.DJ = _orderInfo.value.otc[0]
     qicStore.queryForm.rbo = _orderInfo.value.rbo
     qicStore.queryForm.internalItem = _orderInfo.value.internalItem
