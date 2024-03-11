@@ -2,7 +2,7 @@
 <script setup lang="ts">
 // VUE3
 import { ref, watch,onBeforeMount, onMounted } from 'vue'
-import ExportPdf2 from './ExportPdf2.vue'
+import ExportPdf2 from '../../components/QIR/ExportPdf2.vue'
 // 组件（element）
 import { ElMessageBox } from 'element-plus'
 // 图标
@@ -10,18 +10,18 @@ import { Search } from '@element-plus/icons-vue'
 // element-plus
 import { messageError } from '../../tools/element-plus/SBMessage'
 //hooks
-import tableHooks from './hooks/tableHooks'
+import tableHooks from '../../components/QIR/hooks/tableHooks'
 
-import _useInitQICHooks from './hooks/initQICHooks'
-import _useOrderHooks from './hooks/orderHooks'
-import _useHandleOkHooks from './hooks/handleOkHooks'
-import _userenderingTableHooks from './hooks/renderingTableHooks'
-import _useItemRecordHooks from './hooks/itemRecordHooks'
+import _useInitQICHooks from '../../components/QIR/hooks/initQICHooks'
+import _useOrderHooks from '../../components/QIR/hooks/orderHooks'
+import _useHandleOkHooks from '../../components/QIR/hooks/handleOkHooks'
+import _userenderingTableHooks from '../../components/QIR/hooks/renderingTableHooks'
+import _useItemRecordHooks from '../../components/QIR/hooks/itemRecordHooks'
 
 
-import _autoLoaderHooks from './hooks/autoLoaderHooks'
-import _batchLoaderHooks from './hooks/batchLoaderHooks'
-import _useSearchRecordHooks from './hooks/searchRecordHooks'
+import _autoLoaderHooks from '../../components/QIR/hooks/autoLoaderHooks'
+import _batchLoaderHooks from '../../components/QIR/hooks/batchLoaderHooks'
+import _useSearchRecordHooks from '../../components/QIR/hooks/searchRecordHooks'
 
 
 

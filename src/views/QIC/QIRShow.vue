@@ -2,13 +2,13 @@
 <script setup lang="ts">
 
 // 导入模块
-import ShowPDF from './ShowPDF.vue'
+import ShowPDF from '../../components/QIR/ShowPDF.vue'
 // import Photograph from './Photograph.vue'
-import SelectImg from './SelectImg.vue'
-import Handover from './Handover.vue'
+import SelectImg from '../../components/QIR/SelectImg.vue'
+import Handover from '../../components/QIR/Handover.vue'
 
 // hooks
-import _useDragHooks from './hooks/dragHooks'
+import _useDragHooks from '../../components/QIR/hooks/dragHooks'
 
 // pina
 import { useQirPinia } from '../../store/qir'

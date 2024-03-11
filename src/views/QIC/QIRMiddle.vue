@@ -5,12 +5,12 @@ import { onBeforeMount, onMounted, ref, watch } from 'vue'
 import { PDF_URL, SERVER_URL_SHOW_IMG } from '../../tools/request/qicVar'
 
 // 模块
-import ForemanLogin from './ForemanLogin.vue'
-import SpecialRequest from './SpecialRequest.vue'
-import UploadImage from './UploadImage.vue'
-import EPCModel from './EPCModel.vue'
-import UploadQICFile from './UploadQICFile.vue'
-import UpdateIP from './UpdateIP.vue'
+import ForemanLogin from '../../components/QIR/ForemanLogin.vue'
+import SpecialRequest from '../../components/QIR/SpecialRequest.vue'
+import UploadImage from '../../components/QIR/UploadImage.vue'
+import EPCModel from '../../components/QIR/EPCModel.vue'
+import UploadQICFile from '../../components/QIR/UploadQICFile.vue'
+import UpdateIP from '../../components/QIR/UpdateIP.vue'
 
 
 // api
@@ -30,7 +30,7 @@ import { deleteLocalStorage } from '../../tools/utils/cache'
 import { messageSuccess } from '../../tools/element-plus/SBMessage'
 
 // hooks
-import _getImageHooks from './hooks/getImgHooks'
+import _getImageHooks from '../../components/QIR/hooks/getImgHooks'
 // pinia
 import { useQirPinia } from '../../store/qir'
 import { IImage } from '../../tools/interface/iFileData'

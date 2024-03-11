@@ -2,9 +2,9 @@
 
 // 模块
 import SbHeader from '../components/SbHeader.vue'
-import QIRTable from '../components/QIR/QIRTable.vue'
-import QIRMiddle from '../components/QIR/QIRMiddle.vue'
-import QIRShow from '../components/QIR/QIRShow.vue'
+import QIRTable from './QIC/QIRTable.vue'
+import QIRMiddle from './QIC/QIRMiddle.vue'
+import QIRShow from './QIC/QIRShow.vue'
 
 // import { SIP } from '../assets/js/variable'
 // import { ref } from 'vue'

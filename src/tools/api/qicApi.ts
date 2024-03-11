@@ -176,6 +176,7 @@ export const createQICRecord = (data: IQICDataReq) => new Promise((resolve,rejec
 export const updateOneRecord = (uuid: string, keyValue: string, state: string) => new Promise((resolve,reject)=>
   POST(`SmallFrom/updateOneLine?uuid=${uuid}&keyValue=${keyValue}&state=${state}`).then(res => {
     resolve(res)
+    messageSuccess("更新一条成功")
   }).catch(err => {
     // 提示
     console.error(err)
