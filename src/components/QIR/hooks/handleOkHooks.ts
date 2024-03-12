@@ -64,12 +64,17 @@ function _useHandleOkHooks (tbUuid:Ref<string>) {
     if (tableName === 'Inditex') {
       params += '1:' + InditexValue + '-'
       _tableContent?.forEach((_v:IQICTableData, i:number)=> {
+        if (i === 0) return;
         if (i === index) {
-          params += (index+2) + ':' + value + '-'
+          params += (index + 1) + ':' + value + '-' // 原本是+2 现在测试变成 因为前面已经+1，故不加
         }else {
-          params += (i+2) + ':' + 0 + '-'
+          params += (i + 1) + ':' + 0 + '-' // +2 假设点击第四个，前面加了1 ，现在再加2
         }
       })
+      // 2024-03-12 加上一个
+      if (index === _tableContent.length) params += (_tableContent.length + 1) + ':' + value + '-'
+      else params += (_tableContent.length + 1) + ':' + 0 + '-'
+      
     } else {
       // 普通表
       _tableContent?.forEach((_v:any, i:number)=> {

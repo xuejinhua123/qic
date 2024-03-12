@@ -335,6 +335,13 @@ function _tableHooks(tableName:Ref<string>, InditexValue:Ref<string>) {
       console.log('特殊项 ==> ', record.table_Name)
       InditexValue.value = arr[0].split(':')[1]
       arr.shift() // 删除第一个
+      console.log(arr)
+      // // 每一项减去1
+      // let it:Array<string> = []
+      // arr.forEach( (v:string) => {
+      //   it = v.split(':')
+      //   v = (+it[0] - 1) + ':' + it[1]
+      // } )
     }
     console.log(arr)
 

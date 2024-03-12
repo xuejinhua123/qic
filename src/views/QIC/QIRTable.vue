@@ -925,6 +925,14 @@ const rowStyle = ({row,rowIndex}: {
   background-color: #fff !important
 }
 
+// 字体加租
+.qir-search-box,
+.qir-table-content {
+  /deep/.el-input__inner {
+    font-weight: 800;
+  }
+}
+
 // 最近几条数据
 .qir-ON_list {
   display: flex;
@@ -1091,5 +1099,12 @@ const rowStyle = ({row,rowIndex}: {
     display: flex;
     align-items: center;
   }
+  // 重新选中颜色 这是禁用的颜色
+  /deep/.el-radio__input.is-disabled.is-checked .el-radio__inner
+  {
+    background-color: #00f;
+    border-color: #00f;
+  }
 }
+
 </style>
