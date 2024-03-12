@@ -59,6 +59,7 @@ export interface IQICFiveRecord {
 export interface IQICOrderDByIP {
   batch: string, // 单号
   rbo: string, // 客户
+  typesettingMethod: string, // GPM 如果是GPM，是没有PDF,提示 请查看电子工单上的layout稿图文件
   internalItem: string, // 产品
   otc: Array<string>, // otc
   smallFromName: string, // 表名

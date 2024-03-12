@@ -14,6 +14,10 @@ declare module '*.vue' {
   export default component
 
 }
+declare module 'jspdf' {
+  const content:any
+  export = content
+}
 
 
 //env.d.ts

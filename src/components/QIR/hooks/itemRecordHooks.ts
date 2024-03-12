@@ -55,6 +55,10 @@ function _useItemRecordHooks(isShowQIR:Ref<boolean>, _record:Ref<IQICRecord>, tb
     // 小bug
     _orderInfo.value.batch = batch
 
+    //
+    qicStore.isBatch = 1
+    qicStore.isRecord = 1
+
     // (2) 处理qty
     qicStore.qtyMap = mangeqty(_orderInfo.value.qty)
 
@@ -63,6 +67,11 @@ function _useItemRecordHooks(isShowQIR:Ref<boolean>, _record:Ref<IQICRecord>, tb
     qicStore.queryForm.DJ = _orderInfo.value.otc[0]
     qicStore.queryForm.rbo = _orderInfo.value.rbo
     qicStore.queryForm.internalItem = _orderInfo.value.internalItem
+    qicStore.DJArr = _orderInfo.value.otc
+
+    // 订单信息
+    qicStore.orderInfo = res
+    qicStore.orderInfo.batch = batch
 
     // (5) 渲染表
     _renderingTable(_tableContent.value, InditexValue, qicStore)

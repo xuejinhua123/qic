@@ -49,6 +49,7 @@ let condition = ref<string>('') // 注意核对DIT\n注意核对Format\n注意�
 let pdfUrls = ref<Array<string>>([]) // 获取的数据(PDF)
 let activePdfUrl = ref<number|string>('') // 默认激活第一个PDF
 // let showPdfs = ref<Array<string>>([]) // 显示的pdf数据
+let pdfHintInfo = ref<string>('没有PDF文件...')
 
 
 
@@ -188,6 +189,7 @@ const getPDFByBatch = async () => {
   // console.table(pdfUrls.value)
 
   // if(results.data === undefined) pdfUrls.value = []
+  console.log('获取PDF ==> ', qicStore.queryForm.batch)
   pdfUrls.value = []
   if (qicStore.queryForm.batch === '') return
   GetPDF(qicStore.queryForm.batch).then((res:any)=>{
@@ -207,6 +209,14 @@ const getPDFByBatch = async () => {
     
   }).catch((err:any)=>{
     console.error(err)
+    if (qicStore.orderInfo.typesettingMethod === 'GPM')
+    {
+      pdfHintInfo.value = '请查看电子工单上的layout稿图文件'
+    }
+    else
+    {
+      pdfHintInfo.value = '没有PDF文件...'
+    }
   })
 
   
@@ -749,11 +759,11 @@ onMounted(() => {
 
   <!-- PDF ':8848/pdf/ADNSN22VGK_1UPS_LOA_Docs.pdf'.substr(14,6) {{v.substr(14,6)}} {{v.substring(20,14)}}  -->
   <div class="qir-title">ApprovedLayout</div>
-  <div class="jh_grid_100 pdf-box qirm-box xj-scoll">
+  <div class="jh_grid_100 pdf-box qirm-box xj-scoll" v-show="pdfUrls.length > 0">
     <div class="pdf-item" :class="{active: activePdfUrl === i}" v-show="pdfUrls.length > 0" @click="togglePdf(v, i)" v-for="(v, i) in pdfUrls" :key="i">{{v.substring(20,14)}}</div>
     <!-- <a :class="{active: activePdfUrl === i}" v-show="pdfUrls.length > 0" href="#" @click="togglePdf(v, i)" v-for="(v, i) in pdfUrls" :key="i">{{v.substring(20,14)}}</a> -->
-    <div class="hint" v-show="pdfUrls.length <= 0">没有PDF文件...</div>
   </div>
+  <div class="pdf-box qirm-box hint lh50" v-show="pdfUrls.length <= 0">{{pdfHintInfo}}</div>
 
   <!-- 质量标准 -->
   <div class="qir-title">质量标准</div>
@@ -871,6 +881,9 @@ onMounted(() => {
   // align-content: center;
   height: 50px;
   // padding: 10px 0;
+}
+.lh50 {
+  line-height: 50px;
 }
 .pdf-box .pdf-item{
   flex: 20%;

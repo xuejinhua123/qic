@@ -152,6 +152,7 @@ function _batchLoaderHooks (isShowRecordView:Ref<boolean>, InditexValue:Ref<stri
     _orderInfo.value = {
       batch: '',
       rbo: '',
+      typesettingMethod: '',
       internalItem: '',
       otc: [],
       smallFromName: '',

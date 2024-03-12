@@ -63,10 +63,10 @@ function _getImageHooks() {
 
   // 获取 质量标准 投诉案例图片
   const _getImgByItem = (item:string, rbo:string)=>{
-    _resetImg1()
+    // _resetImg1()
     GetImgByItem(item, rbo).then((res:any)=>{
-      // console.log(res)
-      // _resetImg()
+      console.log(res)
+      _resetImg()
       if (res.length > 0) {
         res.forEach((v:IQualityStandardRes)=>{
           v.path = SERVER_URL_SHOW_IMG + v.path
@@ -87,10 +87,10 @@ function _getImageHooks() {
   }
 
   const _getImgByItemDefault = (item:string, rbo:string)=>{
-    _resetImg1()
+    // _resetImg1()
     GetImgByItemDefault(item, rbo).then((res:any)=>{
       // console.log(res)
-      // _resetImg()
+      _resetImg()
       if (res.length > 0) {
         res.forEach((v:IQualityStandardRes)=>{
           v.path = SERVER_URL_SHOW_IMG + v.path
@@ -131,6 +131,13 @@ function _getImageHooks() {
     _lineImgList.value = []
   }
 
+  /**
+   * 监听batch变化 重置图片
+  */
+  watch(()=>qicStore.BatchRefresh, (newVal, oldVal) => {
+    if (newVal !== oldVal) _resetImg() // 重置全部图片
+  })
+
   // 监听batch, 有点问题，故监听 record
   // watch(()=>qicStore.queryForm.batch, (newVal, oldVal)=>{
   //   console.log('****************** batch更新（img hooks）  **************************')
@@ -147,7 +154,7 @@ function _getImageHooks() {
     console.log('****************** 监听 isRecord 获取 所有图片(不是迪卡侬) **************************')
     console.log(newVal, oldVal, qicStore.isBatch, qicStore.queryForm.batch)
     if (newVal !==oldVal && newVal !== -1 && qicStore.isBatch === 1 && qicStore.queryForm.batch.length === 11) {
-      _resetImg() // 重置全部图片
+      // _resetImg() // 重置全部图片
       if (qicStore.queryForm.rbo.toUpperCase().indexOf('DEC') === -1) {
         _getAllImgByBatch(qicStore.queryForm.batch) //不是迪卡侬的，获取全部图片 获，有历史记录
       }
@@ -174,7 +181,8 @@ function _getImageHooks() {
   watch(()=>[qicStore.queryForm.DJ, qicStore.isRecord],([djNewVal, reNewVal], [djOldVal, crOldVal])=> {
     console.log('****************** 监听dj isRecord 获取 迪卡侬图片 **************************')
     console.log(djNewVal, djOldVal, reNewVal, crOldVal, qicStore.isBatch, qicStore.queryForm.rbo)
-    if (djNewVal !== djOldVal && djNewVal !== '' && qicStore.isBatch === 1) {
+    console.log(qicStore.DJArr[0])
+    if ((djNewVal !== djOldVal || djNewVal == qicStore.DJArr[0]) && djNewVal !== '' && qicStore.isBatch === 1) {
       if (reNewVal === 1 && qicStore.queryForm.rbo.toUpperCase().indexOf('DEC') !== -1) {
         console.log('获取迪卡侬')
         _resetImg2() // 重置 3-4
@@ -189,7 +197,7 @@ function _getImageHooks() {
     console.log('************ 监听 internalItem hooks 获取1-2图片 ******************')
     console.log(newVal, oldVal)
     if(newVal !== oldVal && newVal !== '') {
-      _resetImg1() // 重置1-2
+      // _resetImg1() // 重置1-2
       _getImgByItem(newVal, qicStore.queryForm.rbo)
     }
   })

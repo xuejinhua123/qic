@@ -278,6 +278,10 @@ function _useOrderHooks (tableName:Ref<string>, InditexValue:Ref<string>, isShow
     qicStore.queryForm.rbo = _orderInfo.value.rbo
     qicStore.queryForm.internalItem = _orderInfo.value.internalItem
     qicStore.queryForm._date = getTime(0)
+    qicStore.DJArr = _orderInfo.value.otc
+
+    // 订单信息
+    qicStore.orderInfo = res
 
     // qty 先不设置, 因为qty的变化涉及到定时器
     // qty的设置是在监听器dj的变化才设置
@@ -305,6 +309,11 @@ function _useOrderHooks (tableName:Ref<string>, InditexValue:Ref<string>, isShow
     qicStore.queryForm.rbo = _orderInfo.value.rbo
     qicStore.queryForm.internalItem = _orderInfo.value.internalItem
     qicStore.queryForm._date = getTime(0)
+    qicStore.DJArr = _orderInfo.value.otc
+
+    // 订单信息
+    qicStore.orderInfo = res
+    qicStore.orderInfo.batch = batch
 
     // qty 先不设置, 因为qty的变化涉及到定时器
     // qty的设置是在监听器dj的变化才设置
@@ -332,6 +341,11 @@ function _useOrderHooks (tableName:Ref<string>, InditexValue:Ref<string>, isShow
     qicStore.queryForm.DJ = _orderInfo.value.otc[0]
     qicStore.queryForm.rbo = _orderInfo.value.rbo
     qicStore.queryForm.internalItem = _orderInfo.value.internalItem
+    qicStore.DJArr = _orderInfo.value.otc
+
+    // 订单信息
+    qicStore.orderInfo = res
+    qicStore.orderInfo.batch = batch
     // qicStore.queryForm._date = getTime(0)
 
     // qty 先不设置, 因为qty的变化涉及到定时器
@@ -567,6 +581,7 @@ function _useOrderHooks (tableName:Ref<string>, InditexValue:Ref<string>, isShow
     _orderInfo.value = {
       batch: '',
       rbo: '',
+      typesettingMethod: '',
       internalItem: '',
       otc: [],
       smallFromName: '',

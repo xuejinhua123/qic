@@ -11,7 +11,7 @@ import { ref } from 'vue'
 // import { getTime } from '../utils/sb_time'
 // import { IForemanInfo } from '../utils/interface/Iuser'
 // 接口
-import type { IIpRes, IQICRecord, IQueryQICForm } from '../tools/interface/iQicData'
+import type { IIpRes, IQICOrderDByIP, IQICRecord, IQueryQICForm } from '../tools/interface/iQicData'
 import type { IQicUserRes } from '../tools/interface/iUserData'
 import type { ICamera } from '../tools/interface/iFileData'
 
@@ -53,6 +53,19 @@ const qicUser = ref<IQicUserRes>({
   token: '' // token
 })
 
+/**
+ * 订单信息
+ */
+const orderInfo = ref<IQICOrderDByIP>({
+  batch: '',
+  rbo: '',
+  typesettingMethod: '',
+  internalItem: '',
+  otc: [],
+  smallFromName: '',
+  qty: ''
+})
+
 /** 记录数据
  * 
  */
@@ -69,10 +82,12 @@ const recordObj = ref<IQICRecord>({
   _process: ''
 })
 
+
 /** 工序列表
  * 
  */
 const processArr = ref<Array<string>>([])
+const DJArr = ref<Array<string>>([])
 
 // 摄像头信息
 const cameraArr = ref<Array<ICamera>>([])
@@ -127,9 +142,15 @@ export const useQirPinia = defineStore('Main', {
       isCurrentDayRecord: -1, // 是否是当天记录 默认: -1 ,0：是当天的已完成，1：不是当天的已完成，2：是当天的未完成，3：不是当天的未完成, 4:大单，多天记录
       isDisabledLeft: -1, // 是否禁用左边的 -1：默认值，0：不禁用，1：禁用
       qicUser, // 用户信息
+
+      orderInfo, // 订单信息（自动加载，按单加载）
       recordObj, // 记录数据(一条)
+
       processArr, // 工序信息
-      qtyMap
+      qtyMap,
+
+      BatchRefresh: -1, // 单变化，重置 所有图片，特殊要求，EPC 生产交接, true:变化，累加
+      DJArr // DJ数组
     }
   },
   getters: {

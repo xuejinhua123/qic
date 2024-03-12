@@ -74,6 +74,7 @@ function _autoLoaderHooks(isShowRecordView:Ref<boolean>, _orderInfo:Ref<IQICOrde
     _orderInfo.value = {
       batch: '',
       rbo: '',
+      typesettingMethod: '',
       internalItem: '',
       otc: [],
       smallFromName: '',

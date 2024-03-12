@@ -69,6 +69,7 @@ let InditexValue = ref<string>('2') // 特殊的表，Inditex
 const _orderInfo = ref<IQICOrderDByIP>({
   batch: '',
   rbo: '',
+  typesettingMethod: '',
   internalItem: '',
   otc: [],
   smallFromName: '',
@@ -161,6 +162,7 @@ const isPdf = ref<boolean>(false)
 // （2）自动加载(记得要改测试数据)
 const autoLoader = () => {
   console.log('自动加载!')
+  qicStore.BatchRefresh++ // 测试 累计 后面用batch监听 重置一些参数
   // _clickAuto()
   isAuto.value = -1
   isAuto.value = 0
@@ -176,6 +178,7 @@ const autoLoader = () => {
 // （3）按单加载
 const orderLoader = () => { 
   console.log('按单加载!!')
+  qicStore.BatchRefresh++ // 测试 累计 后面用batch监听 重置一些参数
   // _clickBatchLoader()
   // return
   isAuto.value = -1
@@ -277,6 +280,7 @@ const clickFiveRecord = (_batch: string) => {
 // 根据每一项的报表，点击
 const itemQIC = (record: IQICRecord) => {
 
+  qicStore.BatchRefresh++ // 测试 累计 后面用batch监听 重置一些参数
   _clickItemRecord(record)
   return
 
