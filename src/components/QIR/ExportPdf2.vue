@@ -69,6 +69,12 @@ const setOK = (_table:Array<IQICTableData>, params:string)=>{
       _table[i].results = 'N/A'
     } else {
       _table[i].results = ''
+
+      // 禁用的，是N/A
+      if (_table[i].isDisabled)
+      {
+        _table[i].results = 'N/A'
+      }
     }
   })
 }
