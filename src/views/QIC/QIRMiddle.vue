@@ -11,6 +11,7 @@ import UploadImage from '../../components/QIR/UploadImage.vue'
 import EPCModel from '../../components/QIR/EPCModel.vue'
 import UploadQICFile from '../../components/QIR/UploadQICFile.vue'
 import UpdateIP from '../../components/QIR/UpdateIP.vue'
+import UpdateItem from '../../components/QIR/UpdateItem.vue'
 
 
 // api
@@ -156,6 +157,7 @@ const dialogVisible = ref(false)
 // 点击修改，显示弹框，用来操作特殊要求，质量标准，投诉案例
 const isShowUpdateQIC = ref<boolean>(false)
 const isShowUploadQICFile = ref<boolean>(false)
+const isShowItem = ref<boolean>(false)
 
 const isUpdateIP = ref<boolean>(false) // 弹框 修改IP 设置机台
 
@@ -739,6 +741,7 @@ onMounted(() => {
     <div v-show="qicStore.isForemanLogin">{{qicStore.qicUser.employeeName}}</div>
     <el-button type="primary" v-show="qicStore.isForemanLogin" @click="isShowUpdateQIC = true">修改</el-button>
     <el-button type="primary" v-show="qicStore.isForemanLogin" @click="isShowUploadQICFile = true">上传</el-button>
+    <el-button type="primary" v-show="qicStore.isForemanLogin" @click="isShowItem = true">ITEM</el-button>
     <el-button type="primary" v-show="qicStore.isForemanLogin" @click="isUpdateIP = true">IP</el-button>
     <el-button type="primary" v-show="!qicStore.isForemanLogin" @click="qicStore.isShowLogin = true">登录</el-button>
     <el-button type="primary" v-show="qicStore.isForemanLogin" @click="logout">退出登录</el-button>
@@ -847,6 +850,10 @@ onMounted(() => {
     <UploadQICFile />
   </el-dialog>
 
+  
+  <el-dialog v-model="isShowItem" >
+    <UpdateItem />
+  </el-dialog>
 
   <!-- 修改IP -->
   <el-dialog v-model="isUpdateIP" >

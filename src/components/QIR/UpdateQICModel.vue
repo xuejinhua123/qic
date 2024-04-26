@@ -79,7 +79,7 @@ const getSpecial = () => {
   if (qicStore.queryForm.internalItem === '') {
     return
   }
-  GetSpecialFormatText(qicStore.queryForm.internalItem).then((res:any)=>{
+  GetSpecialFormatText(qicStore.queryForm.internalItem, qicStore.queryForm.rbo).then((res:any)=>{
     // console.log(res)
     // .split('[默认]')[1]
     condition.value = res.special

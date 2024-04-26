@@ -187,11 +187,12 @@ export const updateOneRecord = (uuid: string, keyValue: string, state: string) =
 
 /** 获取特殊要求
  * http://147.121.223.2:8080/QCTable/SpecialFormat/GetSpecialFormatText?item=5-602741-BWH-00
+ * http://10.160.25.66:8080/QCTable/SpecialFormat/GetSpecialFormatText?item=4-230037-000-00&rbo=HANM
  * @param item 产品
  * @returns 特殊要求信息
  */
-export const GetSpecialFormatText = (item: string) => new Promise((resolve,reject)=>
-  GET('SpecialFormat/GetSpecialFormatText', { item }).then(res => {
+export const GetSpecialFormatText = (item: string, rbo: string) => new Promise((resolve,reject)=>
+  GET('SpecialFormat/GetSpecialFormatText', { item, rbo }).then(res => {
     if (res.data.isSuccess){
       resolve(res.data.data)
     } else {
@@ -203,20 +204,45 @@ export const GetSpecialFormatText = (item: string) => new Promise((resolve,rejec
 )
 
 
-/** 修改特殊要求
+/** 修改特殊要求 item
  * http://147.121.223.2:8080/QCTable/SpecialFormat/UpdataSpecial?batch=5-602741-BWH-00&newspecial=%E6%8C%89%E7%85%A7%E8%A6%81%E6%B1%82%E6%9D%A5
  * @param batch 
  * @param newspecial 
  * @returns 
  */
-export const UpdateSpecial = (item: string, newspecial: string, employeeNo: string) => new Promise((resolve,reject)=>
+export const updateSpecialByItem = (item: string, newspecial: string, employeeNo: string) => new Promise((resolve,reject)=>
   {
     // console.log(_axios)
     // _axios.defaults.headers.common['Authorization'] = 'Bearer '+ readLocalStorage('token')
     return POST_TOKEN('SpecialFormat/UpdataSpecial', { item, newspecial,employeeNo }).then(res => {
       if (res.data.isSuccess) {
         resolve(res.data)
-        messageSuccess('修改特殊要求成功')
+        // messageSuccess('修改特殊要求成功')
+      } else {
+        reject(res.data)
+      }
+    }).catch((err:any) => { 
+      reject(err)
+    })
+
+    // 可能会出现跨域, 点击次数(自动加载、按单加载、搜索记录)太快
+  }
+)
+
+/** 修改特殊要求 RBO
+ * http://147.121.223.2:8080/QCTable/SpecialFormat/UpdataSpecial?batch=5-602741-BWH-00&newspecial=%E6%8C%89%E7%85%A7%E8%A6%81%E6%B1%82%E6%9D%A5
+ * @param batch 
+ * @param newspecial 
+ * @returns 
+ */
+export const UpdateSpecialByRBO = (rbo: string, newspecial: string, employeeNo: string) => new Promise((resolve,reject)=>
+  {
+    // console.log(_axios)
+    // _axios.defaults.headers.common['Authorization'] = 'Bearer '+ readLocalStorage('token')
+    return POST_TOKEN('SpecialFormat/UpdataSpecialByRBO', { rbo, newspecial, employeeNo }).then(res => {
+      if (res.data.isSuccess) {
+        resolve(res.data)
+        // messageSuccess('修改特殊要求成功')
       } else {
         reject(res.data)
       }

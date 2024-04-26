@@ -43,6 +43,7 @@ declare module 'vue' {
     ShowPDF: typeof import('./src/components/QIR/ShowPDF.vue')['default']
     SpecialRequest: typeof import('./src/components/QIR/SpecialRequest.vue')['default']
     UpdateIP: typeof import('./src/components/QIR/UpdateIP.vue')['default']
+    UpdateItem: typeof import('./src/components/QIR/UpdateItem.vue')['default']
     UpdateQICModel: typeof import('./src/components/QIR/UpdateQICModel.vue')['default']
     UploadImage: typeof import('./src/components/QIR/UploadImage.vue')['default']
     UploadImageHand: typeof import('./src/components/QIR/UploadImageHand.vue')['default']
