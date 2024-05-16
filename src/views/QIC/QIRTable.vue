@@ -771,7 +771,7 @@ const rowStyle = ({row,rowIndex}: {
       </div>
 
       <!-- 输入 qicStore.queryForm.batch -->
-      <el-form-item label="单号"><el-input v-model="batch" placeholder="请输入单号" clearable :disabled="qicStore.isDisabledLeft === 1" /></el-form-item>
+      <el-form-item label="单号"><el-input v-model="batch" placeholder="请输入单号" clearable :disabled="qicStore.isDisabledLeft === 1" id="qic_batch_input_xxx" /></el-form-item>
       <el-form-item label="DJ">
         <el-select v-model="qicStore.queryForm.DJ" placeholder="DJ" style="width: 100px;" :disabled="qicStore.isDisabledLeft === 1">
           <el-option
@@ -782,11 +782,11 @@ const rowStyle = ({row,rowIndex}: {
           />
         </el-select>
       </el-form-item>
-      <el-form-item label="工号"><el-input v-model.number="qicStore.queryForm.jobNumber" placeholder="工号" clearable @input="inputJob" :disabled="qicStore.isDisabledLeft === 1" /></el-form-item>
+      <el-form-item label="工号"><el-input v-model.number="qicStore.queryForm.jobNumber" placeholder="工号" clearable @input="inputJob" :disabled="qicStore.isDisabledLeft === 1" id="qic_input_employee_xxx" /></el-form-item>
       <el-form-item>
         <el-button-group>
-          <el-button round type="primary" @click="autoLoader" :disabled="qicStore.isDisabledLeft === 1">自动加载</el-button>
-          <el-button round type="success" @click="orderLoader" :disabled="qicStore.isDisabledLeft === 1">按单加载</el-button>
+          <el-button round type="primary" @click="autoLoader" :disabled="qicStore.isDisabledLeft === 1" id="qic_btn_auto_xxx">自动加载</el-button>
+          <el-button round type="success" @click="orderLoader" :disabled="qicStore.isDisabledLeft === 1" id="qic_btn_order_xxx">按单加载</el-button>
         </el-button-group>
       </el-form-item>
 
@@ -794,7 +794,7 @@ const rowStyle = ({row,rowIndex}: {
       <el-form-item label="产品"><el-input disabled v-model="qicStore.queryForm.internalItem" placeholder="产品" clearable /></el-form-item>
       <el-form-item label="姓名"><el-input disabled v-model="qicStore.queryForm._name" placeholder="姓名" clearable /></el-form-item>
       <el-form-item>
-        <el-button round type="primary" @click="_clickSearchRecord" :icon="Search" :disabled="qicStore.isDisabledLeft === 1">搜索记录</el-button>
+        <el-button round type="primary" @click="_clickSearchRecord" :icon="Search" :disabled="qicStore.isDisabledLeft === 1" id="qic_btn_search_xxx">搜索记录</el-button>
       </el-form-item>
 
       <el-form-item>

@@ -2,7 +2,7 @@
 
 import { ref, watch } from "vue"
 import { IQICImgReq, IQualityStandardRes } from "../../../tools/interface/iFileData"
-import { GetImgByBatch, GetImgByItem, GetImgByItemDefault, GetProduceImgByBarchOrDJ } from "../../../tools/api/fileApi"
+import { GetImgByBatch, GetImgByItem, GetImgByItemDefault, GetTemplateByDECA } from "../../../tools/api/fileApi"
 import { SERVER_URL_SHOW_IMG } from "../../../tools/request/qicVar"
 import { useQirPinia } from "../../../store/qir"
 function _getImageHooks() {
@@ -40,8 +40,22 @@ function _getImageHooks() {
     
 
     // 获取迪卡侬图片
-  const _getImgByDECA = (batch:string, dj: string)=>{
-    GetProduceImgByBarchOrDJ(batch, dj).then((res:any)=>{
+  // const _getImgByDECA = (batch:string, dj: string)=>{
+  //   GetProduceImgByBarchOrDJ(batch, dj).then((res:any)=>{
+  //     manageImgByDECA(res)
+  //   }).catch((err:any)=>{
+  //     console.error(err)
+  //     // _resetImg2()
+  //   })
+  // }
+
+  /** 获取迪卡侬图片 2024-05-16
+   * 
+   * @param batch 
+   * @param dj 
+   */
+  const _GetImgByDECA = (batch: string, dj: string)=>{
+    GetTemplateByDECA(batch, dj).then((res:any)=>{
       manageImgByDECA(res)
     }).catch((err:any)=>{
       console.error(err)
@@ -187,7 +201,7 @@ function _getImageHooks() {
         console.log('获取迪卡侬')
         _resetImg2() // 重置 3-4
         // 是迪卡侬的
-        _getImgByDECA(qicStore.queryForm.batch, djNewVal.toString())
+        _GetImgByDECA(qicStore.queryForm.batch, djNewVal.toString())
       }
     }
   })
@@ -207,7 +221,7 @@ function _getImageHooks() {
   // })
 
   return {
-    _qualityStandardList, _complainCaseList, _produceImgList, _lineImgList, _getImgByItem, _getAllImgByBatch, _getImgByDECA, _resetImg1, _getImgByItemDefault
+    _qualityStandardList, _complainCaseList, _produceImgList, _lineImgList, _getImgByItem, _getAllImgByBatch, _GetImgByDECA, _resetImg1, _getImgByItemDefault
   }
 }
 

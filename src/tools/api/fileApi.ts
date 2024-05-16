@@ -41,6 +41,24 @@ export const GetProduceImgByBarchOrDJ = (batch: string, dj: string) => new Promi
   })
 )
 
+/** 获取迪卡侬图片 2024-05-16
+ * localhost:8848/FileService/GetTemplateByDECA?batch=NSL11417373&dj=ATO-61724553
+ * @param batch 
+ * @param dj 
+ * @returns 
+ */
+export const GetTemplateByDECA = (batch:string, dj: string) => new Promise((resolve, reject) =>
+  GET_FILE('GetTemplateByDECA',{batch, dj}).then(res => {
+    if (res.data.isSuccess) {
+      resolve(res.data.data)
+    } else {
+      reject(res.data)
+    }
+  }).catch((err) => {
+    reject(err)
+  })
+)
+
 // 删除图片
 export const deleteImgByUuid = (uuid: string) => new Promise((resolve,reject)=>
   POST_FILE(`deleteImgByUuid?uuid=${uuid}`).then(res => {
