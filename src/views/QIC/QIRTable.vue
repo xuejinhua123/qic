@@ -771,9 +771,9 @@ const rowStyle = ({row,rowIndex}: {
       </div>
 
       <!-- 输入 qicStore.queryForm.batch -->
-      <el-form-item label="单号"><el-input v-model="batch" placeholder="请输入单号" clearable :disabled="qicStore.isDisabledLeft === 1" id="qic_batch_input_xxx" /></el-form-item>
+      <el-form-item label="单号"><el-input v-model="batch" placeholder="请输入单号" style="width: 110px;" clearable :disabled="qicStore.isDisabledLeft === 1" id="qic_batch_input_xxx" /></el-form-item>
       <el-form-item label="DJ">
-        <el-select v-model="qicStore.queryForm.DJ" placeholder="DJ" style="width: 100px;" :disabled="qicStore.isDisabledLeft === 1">
+        <el-select v-model="qicStore.queryForm.DJ" placeholder="DJ" style="width: 130px;" :disabled="qicStore.isDisabledLeft === 1">
           <el-option
             v-for="item in _orderInfo.otc"
             :key="item"
