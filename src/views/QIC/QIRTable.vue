@@ -90,6 +90,7 @@ const _record = ref<IQICRecord>({
 })
 
 let tableName = ref<string>('Thermal')
+let InInditex = ref<boolean>(true) // 是否静止修改Inditex
 let batch = ref<string>('') // 必须在输入框中使用本batch，不然其它组件监听这个，有问题，多次请求的问题（输入框的问题）
 // const _filterSearchRecordList = ref<Array<IQICRecord>>([])
 // hooks
@@ -593,6 +594,41 @@ watch(()=>qicStore.queryForm.procedure, (newVal, oldVal)=>{
   }
 })
 
+// 监听表名
+watch(()=> qicStore.tableName, (newVal, oldVal) => {
+  if (newVal != oldVal) {
+    if (newVal == 'Inditex') { // 显示手动切换
+      InInditex.value = false
+    }
+    else {
+      InInditex.value = true
+    }
+    qicStore.orderInfo.smallFromName = newVal + '/'
+    _orderInfo.value.smallFromName = qicStore.orderInfo.smallFromName
+  }
+})
+// 监听 Inditex 的选项
+watch(()=> InditexValue.value, (newVal, oldVal)=> {
+  if (newVal != oldVal) {
+    switch(newVal)
+    {
+      case '1':
+        qicStore.orderInfo.smallFromName = qicStore.tableName + '/TexTrace'
+        break
+      case '2':
+        qicStore.orderInfo.smallFromName = qicStore.tableName + '/Overlock'
+        break
+      case '3':
+        qicStore.orderInfo.smallFromName = qicStore.tableName + '/Tempe'
+        break
+      case '4':
+        qicStore.orderInfo.smallFromName = qicStore.tableName + '/PFL'
+        break
+    }
+    _orderInfo.value.smallFromName = qicStore.orderInfo.smallFromName
+    console.log(qicStore.orderInfo)
+  }
+})
 
 onBeforeMount(()=> {
   console.log('table onBeforeMount')
@@ -807,7 +843,7 @@ const rowStyle = ({row,rowIndex}: {
       <el-form-item label="日期"><el-input disabled v-model="qicStore.queryForm._date" placeholder="日期" clearable /></el-form-item>
       <el-form-item>
         <!-- procedure -->
-        <el-select v-model="qicStore.queryForm.procedure" placeholder="工序" style="width: 100px;" :disabled="qicStore.isDisabledLeft === 1">
+        <el-select v-model="qicStore.queryForm.procedure" placeholder="工序" style="width: 80px;" :disabled="qicStore.isDisabledLeft === 1">
           <el-option
             v-for="item in qicStore.processArr"
             :key="item"
@@ -815,6 +851,14 @@ const rowStyle = ({row,rowIndex}: {
             :value="item"
           />
         </el-select>
+        <!-- <el-select v-model="qicStore.tableName" placeholder="模板" style="width: 80px;" :disabled="qicStore.isDisabledLeft === 1">
+          <el-option
+            v-for="item in qicStore.qicTypeList"
+            :key="item"
+            :label="item"
+            :value="item"
+          />
+        </el-select> -->
         <!-- 导出按钮 -->
         <!-- <el-button roud type="primary" @click="isPdf = true" >导出</el-button> -->
       </el-form-item>
@@ -826,7 +870,7 @@ const rowStyle = ({row,rowIndex}: {
     <!-- Indeitex 表头 -->
     <div v-show="qicStore.tableName === 'Inditex'" class="Inditex-header">
       <el-radio-group v-model="InditexValue">
-        <el-radio :label="v.index" v-for="(v, i) in InditexProduct" :key="i" disabled>
+        <el-radio :label="v.index" v-for="(v, i) in InditexProduct" :key="i" :disabled = "InInditex">
           <span>{{v.title}}</span>
           <el-image style="width: 50px;" :src="v.url"
             :zoom-rate="1.2" :max-scale="7" :min-scale="0.2" :preview-src-list="[v.url]" :initial-index="4"

@@ -6,6 +6,8 @@ import { ref } from "vue"
 import { IQICRecord, IQICTableData } from '../../tools/interface/iQicData'
 import { downloadPDF } from '../../tools/utils/exportPdf2'
 import { getTime } from "../../tools/utils/sb_time"
+import { useQirPinia } from '../../store/qir'
+const qicStore = useQirPinia()
 
 const props = defineProps({
   _tableList: {
@@ -50,12 +52,15 @@ const setProcess = ()=>{
 }
 
 // 设置OK
-const setOK = (_table:Array<IQICTableData>, params:string)=>{
+const setOK = (_table:Array<IQICTableData>, params:string, tableName:String)=>{
   // 1、裁切ok
   let arr = params.split('-')
   arr.pop() // 去掉最后一个
 
   // 2、特殊情况 Inditex
+  if (tableName === 'Inditex') {
+    arr.shift() // 删除第一个
+  }
 
   // 3、修改
   let it
@@ -79,15 +84,39 @@ const setOK = (_table:Array<IQICTableData>, params:string)=>{
   })
 }
 
+let tableContent = ref<Array<IQICTableData>>([])
 // 处理记录数据
 const mangerRecord = ()=>{
   console.log('处理历史记录数据')
-  // console.table(props._tableList)
+  if (props._tableList![0].table_Name === 'Inditex') {
+    let arr = JSON.parse(JSON.stringify(qicStore.tableData.get('Inditex')))
+    // console.table(arr)
+    arr.forEach((v:any, i:number) => {
+      tableContent.value.push(
+        {
+          process: v.process,
+          number: v.number,
+          risk_level: v.risk_level,
+          inspection_frequency: v.inspection_frequency,
+          inspection_items: v.inspection_items,
+          method: v.method,
+          results: v.results,
+          isDisabled: false,
+          index: i,
+          step: v.step
+        }
+      )
+    })
+  }
+  else {
+    tableContent.value = props._tableContent
+  }
+  // console.table(tableContent.value)
+  // console.table(TABLE_SET) NSB12349175
   // console.table(props._tableContent)
-  // console.table(TABLE_SET)
   // 1、获取工序
   setProcess()
-  console.table(_processAll.value)
+  // console.table(_processAll.value)
 
   _batch.value = props._tableList![0].batch
 
@@ -107,14 +136,13 @@ const mangerRecord = ()=>{
     item._info._name = v.cN_Name
     item._info._date = v.create_Time
     // 处理表OK内容
-    setOK(props._tableContent, v.params)
-
+    setOK(tableContent.value, v.params, props._tableList![0].table_Name)
     // 添加表工序内容
     // 使用some数组方法可以跳出循环
     _processAll.value.some((v1:any)=>{
       if (v1._title === v._process) {
         // 必须深拷贝, 由于没有什么map + symbol 等，可以使用JSON 深拷贝
-        item._table = JSON.parse(JSON.stringify(props._tableContent.slice(v1.start - 1, v1.end)))
+        item._table = JSON.parse(JSON.stringify(tableContent.value.slice(v1.start - 1, v1.end)))
         _pdfList.value?.push(item)
         return true
       }
@@ -131,6 +159,8 @@ const mangerRecord = ()=>{
   })
 
   // 显示
+  // console.table(tableContent.value)
+  // console.table(props._tableContent)
   // console.log(_pdfList.value)
   // _pdfList.value.forEach(v=>{
   //   console.log(`工序: ${v._info._process} 姓名: ${v._info._name} 日期: ${v._info._date}`)

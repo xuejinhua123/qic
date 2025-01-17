@@ -318,8 +318,8 @@ function _useOrderHooks (tableName:Ref<string>, InditexValue:Ref<string>, isShow
     // qty 先不设置, 因为qty的变化涉及到定时器
     // qty的设置是在监听器dj的变化才设置
 
-    console.table(_orderInfo.value)
-    console.table(qicStore.queryForm)
+    // console.table(_orderInfo.value)
+    // console.table(qicStore.queryForm)
   }
 
   // 处理订单信息(搜索)
@@ -440,9 +440,9 @@ function _useOrderHooks (tableName:Ref<string>, InditexValue:Ref<string>, isShow
     const day = _record.value.create_Time.split(' ')[0]
     const currentDay = getTime(0)
     console.log("*******  记录按单加载 ************")
-    console.table(_record.value)
-    console.table(_orderInfo.value)
-    console.table(qicStore.queryForm)
+    // console.table(_record.value)
+    // console.table(_orderInfo.value)
+    // console.table(qicStore.queryForm)
     if (_record.value.state === '1') { // 如果是已完成
 
       // 一单做几天的情况
@@ -505,11 +505,12 @@ function _useOrderHooks (tableName:Ref<string>, InditexValue:Ref<string>, isShow
     // qicStore.queryForm.jobNumber = +_record.value.employee
     // qicStore.queryForm._name = _record.value.cN_Name
     // qicStore.queryForm.procedure = _record.value._process
-
+    qicStore.orderInfo.smallFromName = qicStore.recordObj.table_Name + '/'
+    console.table(_orderInfo.value)
     console.log('按单加载历史记录')
-    console.table(_record.value)
-    console.table(qicStore.queryForm)
-    console.table(qicStore.recordObj)
+    // console.table(_record.value)
+    // console.table(qicStore.queryForm)
+    // console.table(qicStore.recordObj)
   }
 
   // 处理搜索记录

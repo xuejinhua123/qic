@@ -11,7 +11,7 @@ import { ref } from 'vue'
 // import { getTime } from '../utils/sb_time'
 // import { IForemanInfo } from '../utils/interface/Iuser'
 // 接口
-import type { IIpRes, IQICOrderDByIP, IQICRecord, IQueryQICForm } from '../tools/interface/iQicData'
+import type { IIpRes, IQICOrderDByIP, IQICRecord, IQICTableData, IQueryQICForm } from '../tools/interface/iQicData'
 import type { IQicUserRes } from '../tools/interface/iUserData'
 import type { ICamera } from '../tools/interface/iFileData'
 
@@ -88,11 +88,16 @@ const recordObj = ref<IQICRecord>({
  */
 const processArr = ref<Array<string>>([])
 const DJArr = ref<Array<string>>([])
+/**
+ * 电子质量检查表模板列表
+ */
+const qicTypeList = ref<Array<string>>([])
 
 // 摄像头信息
 const cameraArr = ref<Array<ICamera>>([])
 
 const qtyMap = ref<Map<string, string>>(new Map())
+const tableData = ref<Map<string, Array<IQICTableData>>>(new Map())
 
 export const useQirPinia = defineStore('Main', {
   state () {
@@ -150,7 +155,9 @@ export const useQirPinia = defineStore('Main', {
       qtyMap,
 
       BatchRefresh: -1, // 单变化，重置 所有图片，特殊要求，EPC 生产交接, true:变化，累加
-      DJArr // DJ数组
+      DJArr, // DJ数组
+      qicTypeList,
+      tableData
     }
   },
   getters: {

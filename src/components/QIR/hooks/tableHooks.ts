@@ -45,6 +45,7 @@ function _tableHooks(tableName:Ref<string>, InditexValue:Ref<string>) {
       if (!_isTableData(v)) { // 判断是否有表格数据
         GetTableJson(v).then((res:any)=>{
           _tableData.value.set(v, res.data)
+          qicStore.tableData.set(v, res.data)
           // // 初始化第一次
           // if (v === tableName.value) {
           //   _getOneTableContent()
@@ -54,6 +55,10 @@ function _tableHooks(tableName:Ref<string>, InditexValue:Ref<string>) {
         })
       }
     })
+
+    // 设置表名
+    qicStore.qicTypeList = [...TABLE_NAME]
+    // console.log('表名：==》 ', qicStore.qicTypeList)
   }
 
 
@@ -184,6 +189,7 @@ function _tableHooks(tableName:Ref<string>, InditexValue:Ref<string>) {
     // console.log(_name)
     // console.table(_tableProcedure.value)
     // console.table(_tableContent.value)
+    // console.log(qicStore.tableName)
     // console.table(_filterTableContent.value)
 
   }
@@ -316,7 +322,7 @@ function _tableHooks(tableName:Ref<string>, InditexValue:Ref<string>) {
   // 渲染表
   const _renderingTable = (record:IQICRecord)=>{
     console.log('渲染表')
-    console.table(record)
+    // console.table(record)
     
     // 设置表数据
     tableNameHandle(record.table_Name)
@@ -412,7 +418,7 @@ function _tableHooks(tableName:Ref<string>, InditexValue:Ref<string>) {
 
   // 监听 工序变化
   watch(()=>qicStore.queryForm.procedure, (newVal, oldVal) => {
-    // console.log('**********  工序变化了 *************')
+    console.log('**********  工序变化了 *************')
     if (newVal!== oldVal) {
       _filterTable(newVal)
     } else if (newVal === '') {
